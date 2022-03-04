@@ -27,7 +27,7 @@
 
 merge_selective_inference <- function(X, k1, k2, g, ndraws = 2000, cl_fun, cl){
   Xg <- data.frame(Xg=X[,g], Cluster = cl)
-  Ck1k2 <- Xg %>% group_by(Cluster) %>% summarise(Mean = mean(Xg)) %>% arrange(Mean)
+  Ck1k2 <- Xg %>% group_by("Cluster") %>% summarise(Mean = mean(Xg)) %>% arrange("Mean")
   adjacent <- as.numeric(Ck1k2$Cluster[which(Ck1k2$Cluster == k1):which(Ck1k2$Cluster == k2)])
   if (length(adjacent) == 2){
     pval_agg <- NA
