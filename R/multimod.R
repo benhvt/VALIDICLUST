@@ -42,7 +42,7 @@ test_multimod <- function(X, g, cl, k1, k2){
   X.df <- data.frame(X=X[,g], Cluster = as.factor(cl))
   X.df$id <- 1:nrow(X.df)
 
-  mean_in_cluster <- X.df %>% group_by(`Cluster`) %>% summarise(mean_X = mean(X))
+  mean_in_cluster <- X.df %>% group_by(.data$Cluster) %>% summarise(mean_X = mean(.data$X))
   ord_X <- mean_in_cluster$Cluster[sort(mean_in_cluster$mean_X, index.return = T)$ix]
 
   clust_ret <- ord_X[which(ord_X==k1):which(ord_X==k2)]
