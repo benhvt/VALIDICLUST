@@ -9,9 +9,9 @@
 
 * `test_selective_inference()`  adpated from the work of Gao et al. [[1]](#1) concerning selective inference for clustering 
 
-* `merge_selective_inference()` for the merging selective test. With this method, all the adjacent p-values are merging using harmonic mean 
+* `merge_selective_inference()` for the merging selective test. With this method, all the adjacent p-values are merged using harmonic mean 
 
-* `test_multimod()` using the DipTest [[2]](#2) to study the separation of two estimated clusters on a given variable 
+* `test_multimod()` use the DipTest [[2]](#2) to investigate the presence of a continnum between two estimated clusters on a given variable 
 
 # Installation
 
