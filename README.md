@@ -25,5 +25,5 @@ remotes::install_github("benhvt/PCVI")
 <a id="1">[1]</a> 
 Gao, L. L., Bien, J., & Witten, D. (2020). Selective inference for hierarchical clustering. arXiv preprint arXiv:2012.02936.
 
-<a id="2"[2]</a>
+<a id="2">[2]</a>
 HARTIGAN, John A. et HARTIGAN, Pamela M. The dip test of unimodality. The annals of Statistics, 1985, p. 70-84.
