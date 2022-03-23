@@ -7,22 +7,22 @@
 
 # Overview
 
-`PCVI` is a package to ensure valid inference after data clustering.
-This problem occurs when clustering force differences beteween groups of
-observations to build clusters. This lead to an inflation of the type I
-error rate particularly because data are used twice: i) to build
-clusters, that is, to build hypothesis and ii) to do the inference step.
-The 3 main functions of the package are :
+`PCVI` s a package for ensuring valid inference after data clustering.
+This problem occurs when clustering forces differences between groups of
+observations to build clusters. This leads to an inflation of the Type I
+error rate, especially because the data is used twice: i) to build
+clusters, i.e., to form hypotheses, and ii) to perform the inference
+step. The 3 main functions of the package are:
 
--   `test_selective_inference()` adpated from the work of Gao et
-    al. [\[1\]](#1) concerning selective inference for clustering
+-   `test_selective_inference()` following the work of Gao et
+    al. [\[1\]](#1) on selective inference for clustering
 
--   `merge_selective_inference()` for the merging selective test. With
-    this method, all the adjacent p-values are merged using harmonic
+-   `merge_selective_inference()` for the merging selective test. In
+    this method, all adjacent p-values are merged using the harmonic
     mean
 
--   `test_multimod()` use the DipTest [\[2\]](#2) to investigate the
-    presence of a continnum between two estimated clusters on a given
+-   `test_multimod()` uses the DipTest [\[2\]](#2) to investigate the
+    presence of a continnum between two estimated clusters for a given
     variable
 
 # Installation
@@ -35,17 +35,17 @@ remotes::install_github("benhvt/PCVI")
 
 # Example
 
-To illustrate our proposed method, we use
+To illustrate our proposed method, we use the
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) dataset
-available in the `palmerpenguins` package. To ensure the absence of
-truly separated group of observations, we subset onlye female penguins
-from the Adelie species, resulting 73 observations. On this datan we
-apply hierarchical clustering (on euclidean distances with Ward linkage)
-to build 2 clusters. In this negative control dataset, we know the true
-*i.e* the absence of separated group of observation. We therefor apply
-our 3 tests on each of the 4 numerical measurements to test a separation
-of the two clusters and we compare the resulting p-values with the
-classical t-test p-values.
+from the `palmerpenguins` package. To ensure that there are no truly
+separate groups of observations, we selected only the female penguins of
+the Adelie species, yielding 73 observations. On this dataset, we apply
+hierarchical clustering (on Euclidean distances with Ward linkage) to
+build 2 clusters. In this negative control dataset, we know the true,
+i.e., the non-existing separated group of observations. We therefore
+apply our 3 tests to each of the 4 numerical measurements to test for
+separation of the 2 clusters, and compare the resulting p-values to the
+p-values of the classical t-test.
 
 ``` r
 data("penguins")
@@ -133,16 +133,16 @@ body mass g
 Selective Inference
 </td>
 <td style="text-align: center;">
-0.158
+0.139
 </td>
 <td style="text-align: center;">
-0.784
+0.759
 </td>
 <td style="text-align: center;">
-0.502
+0.449
 </td>
 <td style="text-align: center;">
-0.499
+0.509
 </td>
 </tr>
 <tr>
@@ -150,16 +150,16 @@ Selective Inference
 Merging Selective Inference
 </td>
 <td style="text-align: center;">
-0.151
+0.149
 </td>
 <td style="text-align: center;">
-0.76
+0.732
 </td>
 <td style="text-align: center;">
-0.442
+0.488
 </td>
 <td style="text-align: center;">
-0.452
+0.447
 </td>
 </tr>
 <tr>
