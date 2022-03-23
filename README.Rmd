@@ -29,10 +29,14 @@ remotes::install_github("benhvt/PCVI")
 
 # Example 
 
-```{r, echo = F}
+To illustrate our proposed method, we use [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) dataset available in the `palmerpenguins` package. To ensure the absence of truly separated group of observations, we subset onlye female penguins from the Adelie species, resulting 73 observations. On this datan we apply hierarchical clustering (on euclidean distances with Ward linkage) to build 2 clusters. In this negative control dataset, we know the true *i.e* the absence of separated group of observation. We therefor apply our 3 tests on each of the 4 numerical measurements to test a separation of the two clusters and we compare the resulting p-values with the classical t-test p-values. 
+
+```{r, echo = F, message = F}
 library(palmerpenguins)
 library(ggplot2)
+library(dplyr)
 library(GGally)
+library(PCVI)
 ```
 
 ```{r,message = F}
@@ -54,6 +58,42 @@ ggpairs(data, aes(colour = Cluster, fill = Cluster)) +
   scale_colour_manual(values = c("#F1786D","#53888f")) + 
   scale_fill_manual(values = c("#F1786D","#53888f")) + 
   theme_minimal()
+
+pval.inference.selective <- pval.merge <- pval.multimod <- pval.t.test <- rep(NA, 4)
+for (i in 1:4){
+  pval.inference.selective[i] <- test_selective_inference(as.matrix(data[,1:4]), 
+                                                          k1=1, 
+                                                          k2=2, 
+                                                          g=i, 
+                                                          cl_fun = hcl2, 
+                                                          cl=data$Cluster)$pval
+  pval.merge[i] <- merge_selective_inference(as.matrix(data[,1:4]),
+                                             k1=1, 
+                                             k2=2, 
+                                             g=i, 
+                                             cl_fun = hcl2,
+                                             cl=data$Cluster)$pval
+  pval.multimod[i] <- test_multimod(as.matrix(data[,1:4]),
+                                    g=i,
+                                    k1=1, 
+                                    k2=2,
+                                    cl = data$Cluster)$pval
+  pval.t.test[i] <- t.test(data[data$Cluster == 1,i], data[data$Cluster==2, i])$p.value
+}
+
+
+pval.res <- rbind(pval.inference.selective, 
+                  pval.merge,
+                  pval.multimod,
+                  pval.t.test)
+
+colnames(pval.res) <- gsub("_", x=colnames(data)[1:4], replacement = " ")
+rownames(pval.res) <- c("Selective Inference",
+                        "Merging Selective Inference",
+                        "Multimoality test", 
+                        "T-test")
+
+round(pval.res,3) %>% htmlTable::htmlTable()
 ```
 
 

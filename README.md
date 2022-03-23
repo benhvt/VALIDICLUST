@@ -35,9 +35,17 @@ remotes::install_github("benhvt/PCVI")
 
 # Example
 
-    ## Registered S3 method overwritten by 'GGally':
-    ##   method from   
-    ##   +.gg   ggplot2
+To illustrate our proposed method, we use
+[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/) dataset
+available in the `palmerpenguins` package. To ensure the absence of
+truly separated group of observations, we subset onlye female penguins
+from the Adelie species, resulting 73 observations. On this datan we
+apply hierarchical clustering (on euclidean distances with Ward linkage)
+to build 2 clusters. In this negative control dataset, we know the true
+*i.e* the absence of separated group of observation. We therefor apply
+our 3 tests on each of the 4 numerical measurements to test a separation
+of the two clusters and we compare the resulting p-values with the
+classical t-test p-values.
 
 ``` r
 data("penguins")
@@ -61,6 +69,135 @@ ggpairs(data, aes(colour = Cluster, fill = Cluster)) +
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+``` r
+pval.inference.selective <- pval.merge <- pval.multimod <- pval.t.test <- rep(NA, 4)
+for (i in 1:4){
+  pval.inference.selective[i] <- test_selective_inference(as.matrix(data[,1:4]), 
+                                                          k1=1, 
+                                                          k2=2, 
+                                                          g=i, 
+                                                          cl_fun = hcl2, 
+                                                          cl=data$Cluster)$pval
+  pval.merge[i] <- merge_selective_inference(as.matrix(data[,1:4]),
+                                             k1=1, 
+                                             k2=2, 
+                                             g=i, 
+                                             cl_fun = hcl2,
+                                             cl=data$Cluster)$pval
+  pval.multimod[i] <- test_multimod(as.matrix(data[,1:4]),
+                                    g=i,
+                                    k1=1, 
+                                    k2=2,
+                                    cl = data$Cluster)$pval
+  pval.t.test[i] <- t.test(data[data$Cluster == 1,i], data[data$Cluster==2, i])$p.value
+}
+
+
+pval.res <- rbind(pval.inference.selective, 
+                  pval.merge,
+                  pval.multimod,
+                  pval.t.test)
+
+colnames(pval.res) <- gsub("_", x=colnames(data)[1:4], replacement = " ")
+rownames(pval.res) <- c("Selective Inference",
+                        "Merging Selective Inference",
+                        "Multimoality test", 
+                        "T-test")
+
+round(pval.res,3) %>% htmlTable::htmlTable()
+```
+
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey;">
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+bill length mm
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+bill depth mm
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+flipper length mm
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+body mass g
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+Selective Inference
+</td>
+<td style="text-align: center;">
+0.158
+</td>
+<td style="text-align: center;">
+0.784
+</td>
+<td style="text-align: center;">
+0.502
+</td>
+<td style="text-align: center;">
+0.499
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Merging Selective Inference
+</td>
+<td style="text-align: center;">
+0.151
+</td>
+<td style="text-align: center;">
+0.76
+</td>
+<td style="text-align: center;">
+0.442
+</td>
+<td style="text-align: center;">
+0.452
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Multimoality test
+</td>
+<td style="text-align: center;">
+0.806
+</td>
+<td style="text-align: center;">
+0.193
+</td>
+<td style="text-align: center;">
+0.044
+</td>
+<td style="text-align: center;">
+0.599
+</td>
+</tr>
+<tr>
+<td style="border-bottom: 2px solid grey; text-align: left;">
+T-test
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+0.4
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+0
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+0
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+0
+</td>
+</tr>
+</tbody>
+</table>
 
 # References
 
