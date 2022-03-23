@@ -19,19 +19,19 @@ This problem occurs when clustering force differences beteween groups of observa
 
 Install the development version from GitHub
 
-```r 
+```{r, eval = F}
 remotes::install_github("benhvt/PCVI")
 ```
 
 # Example 
 
-```r{echo = F}
-library(palmer)
+```{r, echo = F}
+library(palmerpenguins)
 library(ggplot2)
 library(GGally)
 ```
 
-```r{message = F}
+```{r,message = F}
 data("penguins")
 data <- subset(penguins, species == "Adelie" & sex == "female")
 data <- data[,3:6]
