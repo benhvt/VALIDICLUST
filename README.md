@@ -7,12 +7,13 @@
 
 # Overview
 
-`VALIDICLUST` s a package for ensuring valid inference after data
-clustering. This problem occurs when clustering forces differences
-between groups of observations to build clusters. This leads to an
-inflation of the Type I error rate, especially because the data is used
-twice: i) to build clusters, i.e., to form hypotheses, and ii) to
-perform the inference step. The 3 main functions of the package are:
+`VALIDICLUST` (VALId Inference for post-CLUstering Separation Testing)
+is a package for ensuring valid inference after data clustering. This
+problem occurs when clustering forces differences between groups of
+observations to build clusters. This leads to an inflation of the Type I
+error rate, especially because the data is used twice: i) to build
+clusters, i.e., to form hypotheses, and ii) to perform the inference
+step. The 3 main functions of the package are:
 
 -   `test_selective_inference()` following the work of Gao et
     al. [\[1\]](#1) on selective inference for clustering
@@ -133,16 +134,16 @@ body mass g
 Selective Inference
 </td>
 <td style="text-align: center;">
-0.135
+0.147
 </td>
 <td style="text-align: center;">
-0.759
+0.755
 </td>
 <td style="text-align: center;">
-0.509
+0.47
 </td>
 <td style="text-align: center;">
-0.431
+0.436
 </td>
 </tr>
 <tr>
@@ -150,16 +151,16 @@ Selective Inference
 Merging Selective Inference
 </td>
 <td style="text-align: center;">
-0.146
+0.159
 </td>
 <td style="text-align: center;">
-0.721
+0.77
 </td>
 <td style="text-align: center;">
-0.489
+0.487
 </td>
 <td style="text-align: center;">
-0.467
+0.437
 </td>
 </tr>
 <tr>
