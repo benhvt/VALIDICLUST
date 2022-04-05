@@ -1,10 +1,9 @@
-Package: PCVI
-Title: Post-Clustering Variable inference 
-Version: 0.0.0
+Package: VALIDICLUST
+Title: VALIDe Inference for post-CLUstering Seperation Testing 
+Version: 0.1.0
 Author: Benjamin Hivert
 Maintainer: The package maintainer <benjamin.hivert@u-bordeaux.fr>
-Description: PCVI is a package to study post-clustering variable involvement that is, to study if a particular variable is involved in the clustering of a particular pair of clusters. The particularities of the methods implemented in PCVI is that they take into account the clustering step to correct for the potential artificial differences created by the clustering step. 
-License: GPL (>= 3)
+Description: VALIDICLUST is a package to perform post-clustering variable iinference that is, to study if two clusters are significantly seperated on a given variable
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

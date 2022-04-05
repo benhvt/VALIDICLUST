@@ -1,18 +1,18 @@
 
-# PCVI
+# VALIDICLUST
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/benhvt/PCVI/workflows/R-CMD-check/badge.svg)](https://github.com/benhvt/PCVI/actions)
+[![R-CMD-check](https://github.com/benhvt/VALIDICLUST/workflows/R-CMD-check/badge.svg)](https://github.com/benhvt/VALIDICLUST/actions)
 <!-- badges: end -->
 
 # Overview
 
-`PCVI` s a package for ensuring valid inference after data clustering.
-This problem occurs when clustering forces differences between groups of
-observations to build clusters. This leads to an inflation of the Type I
-error rate, especially because the data is used twice: i) to build
-clusters, i.e., to form hypotheses, and ii) to perform the inference
-step. The 3 main functions of the package are:
+`VALIDICLUST` s a package for ensuring valid inference after data
+clustering. This problem occurs when clustering forces differences
+between groups of observations to build clusters. This leads to an
+inflation of the Type I error rate, especially because the data is used
+twice: i) to build clusters, i.e., to form hypotheses, and ii) to
+perform the inference step. The 3 main functions of the package are:
 
 -   `test_selective_inference()` following the work of Gao et
     al. [\[1\]](#1) on selective inference for clustering
@@ -30,7 +30,7 @@ step. The 3 main functions of the package are:
 Install the development version from GitHub
 
 ``` r
-remotes::install_github("benhvt/PCVI")
+remotes::install_github("benhvt/VALIDICLUST")
 ```
 
 # Example
@@ -133,16 +133,16 @@ body mass g
 Selective Inference
 </td>
 <td style="text-align: center;">
-0.139
+0.135
 </td>
 <td style="text-align: center;">
 0.759
 </td>
 <td style="text-align: center;">
-0.449
+0.509
 </td>
 <td style="text-align: center;">
-0.509
+0.431
 </td>
 </tr>
 <tr>
@@ -150,16 +150,16 @@ Selective Inference
 Merging Selective Inference
 </td>
 <td style="text-align: center;">
-0.149
+0.146
 </td>
 <td style="text-align: center;">
-0.732
+0.721
 </td>
 <td style="text-align: center;">
-0.488
+0.489
 </td>
 <td style="text-align: center;">
-0.447
+0.467
 </td>
 </tr>
 <tr>
