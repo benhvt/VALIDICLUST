@@ -9,7 +9,7 @@ output: github_document
 
 # Overview 
 
-`VALIDICLUST` (VALId Inference for post-CLUstering Separation Testing) is a package for ensuring valid inference after data clustering. This problem occurs when clustering forces differences between groups of observations to build clusters. This leads to an inflation of the Type I error rate, especially because the data is used twice: i) to build clusters, i.e., to form hypotheses, and ii) to perform the inference step. The 3 main functions of the package are:
+`VALIDICLUST` (VALID Inference for post-CLUstering Separation Testing) is a package for ensuring valid inference after data clustering. This problem occurs when clustering forces differences between groups of observations to build clusters. This leads to an inflation of the Type I error rate, especially because the data is used twice: i) to build clusters, i.e., to form hypotheses, and ii) to perform the inference step. The 3 main functions of the package are:
 
 * `test_selective_inference()` following the work of Gao et al. [[1]](#1) on selective inference for clustering
 

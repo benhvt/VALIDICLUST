@@ -7,7 +7,7 @@
 
 # Overview
 
-`VALIDICLUST` (VALId Inference for post-CLUstering Separation Testing)
+`VALIDICLUST` (VALID Inference for post-CLUstering Separation Testing)
 is a package for ensuring valid inference after data clustering. This
 problem occurs when clustering forces differences between groups of
 observations to build clusters. This leads to an inflation of the Type I
@@ -134,16 +134,16 @@ body mass g
 Selective Inference
 </td>
 <td style="text-align: center;">
-0.147
+0.15
 </td>
 <td style="text-align: center;">
-0.755
+0.796
 </td>
 <td style="text-align: center;">
-0.47
+0.428
 </td>
 <td style="text-align: center;">
-0.436
+0.405
 </td>
 </tr>
 <tr>
@@ -151,16 +151,16 @@ Selective Inference
 Merging Selective Inference
 </td>
 <td style="text-align: center;">
-0.159
+0.158
 </td>
 <td style="text-align: center;">
-0.77
+0.73
 </td>
 <td style="text-align: center;">
-0.487
+0.453
 </td>
 <td style="text-align: center;">
-0.437
+0.417
 </td>
 </tr>
 <tr>
