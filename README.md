@@ -23,7 +23,7 @@ step. The 3 main functions of the package are:
     mean
 
 -   `test_multimod()` uses the DipTest [\[2\]](#2) to investigate the
-    presence of a continnum between two estimated clusters for a given
+    presence of a continuum between two estimated clusters for a given
     variable
 
 # Installation
@@ -134,16 +134,16 @@ body mass g
 Selective Inference
 </td>
 <td style="text-align: center;">
-0.15
+0.151
 </td>
 <td style="text-align: center;">
-0.796
+0.774
 </td>
 <td style="text-align: center;">
-0.428
+0.508
 </td>
 <td style="text-align: center;">
-0.405
+0.483
 </td>
 </tr>
 <tr>
@@ -151,16 +151,16 @@ Selective Inference
 Merging Selective Inference
 </td>
 <td style="text-align: center;">
-0.158
+0.147
 </td>
 <td style="text-align: center;">
-0.73
+0.767
 </td>
 <td style="text-align: center;">
-0.453
+0.392
 </td>
 <td style="text-align: center;">
-0.417
+0.473
 </td>
 </tr>
 <tr>

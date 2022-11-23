@@ -15,7 +15,7 @@ output: github_document
 
 * `merge_selective_inference()` for the merging selective test. In this method, all adjacent p-values are merged using the harmonic mean
 
-* `test_multimod()` uses the DipTest [[2]](#2) to investigate the presence of a continnum between two estimated clusters for a given variable
+* `test_multimod()` uses the DipTest [[2]](#2) to investigate the presence of a continuum between two estimated clusters for a given variable
 
 # Installation
 
