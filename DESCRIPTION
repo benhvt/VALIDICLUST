@@ -1,9 +1,9 @@
 Package: VALIDICLUST
-Title: VALIDe Inference for post-CLUstering Seperation Testing 
+Title: Valid Inference for post-Clustering Separation Testing 
 Version: 0.1.0
 Author: Benjamin Hivert
-Maintainer: The package maintainer <benjamin.hivert@u-bordeaux.fr>
-Description: VALIDICLUST is a package to perform post-clustering variable inference that is, to study if two clusters are significantly seperated on a given variable.
+Maintainer: Benjamin Hivert <benjamin.hivert@u-bordeaux.fr>
+Description: Given a partition resulting from any clustering algorithm, the implemented tests allow valid post-clustering inference by testing if a given variable significantly separates two of the estimated clusters. 
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

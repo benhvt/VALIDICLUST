@@ -2,7 +2,6 @@
 
 export(merge_selective_inference)
 export(test_multimod)
-export(test_multimod_ttest)
 export(test_selective_inference)
 import(diptest)
 import(dplyr)
