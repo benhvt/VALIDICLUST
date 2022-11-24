@@ -1,7 +1,7 @@
 #' Merged version of the selective test
 #'
 #' @param X The data matrix of size on which the clustering is applied
-#' @param k1 The fisrt cluster of interest
+#' @param k1 The first cluster of interest
 #' @param k2 The second cluster of interest
 #' @param g The variables for which the test is applied
 #' @param ndraws The number of Monte-Carlo samples

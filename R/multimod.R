@@ -2,7 +2,7 @@
 #'
 #' @param X The data matrix of size on which the clustering is applied
 #' @param g The variable on which the test is applied
-#' @param cl The labels of the data obtained thanks to a clusteirng algorithm
+#' @param cl The labels of the data obtained thanks to a clustering algorithm
 #' @param k1 The first cluster of interest
 #' @param k2 The second cluster of interest
 #'

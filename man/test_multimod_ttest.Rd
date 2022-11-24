@@ -11,7 +11,7 @@ test_multimod_ttest(X, g, cl, k1, k2)
 
 \item{g}{The variable on which the test is applied}
 
-\item{cl}{The labels of the data obtained thanks to a clusteirng algorithm}
+\item{cl}{The labels of the data obtained thanks to a clustering algorithm}
 
 \item{k1}{The first cluster of interest}
 

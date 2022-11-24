@@ -18,7 +18,7 @@ test_selective_inference(
 \arguments{
 \item{X}{The data matrix of size on which the clustering is applied}
 
-\item{k1}{The fisrt cluster of interest}
+\item{k1}{The first cluster of interest}
 
 \item{k2}{The second cluster of interest}
 
@@ -37,11 +37,14 @@ A list with the following elements \itemize{
 \item \code{stat_g} : the test statistic used for the test.
 \item \code{pval} : The resulting p-values of the test.
 \item \code{stder} : The standard deviation of the p-values computed thanks to the Monte-Carlo samples.
-\item \code{clusters} : The lables of the data.
+\item \code{clusters} : The labels of the data.
 }
 }
 \description{
 Selective inference for post-clustering variable involvement
+}
+\note{
+This function is adapted from the clusterpval::test_clusters_approx() of Gao et al. (2022)
 }
 \examples{
 X <- matrix(rnorm(200),ncol = 2)
@@ -51,4 +54,8 @@ cl <- hcl_fun(X)
 plot(X, col=cl)
 test_var1 <- test_selective_inference(X, k1=1, k2=2, g=1, ndraws =2000, cl_fun = hcl_fun, cl = cl)
 test_var2 <- test_selective_inference(X, k1=1, k2=2, g=2, ndraws =2000, cl_fun = hcl_fun, cl = cl)
+
+}
+\references{
+Gao, L. L., Bien, J., & Witten, D. (2022). Selective inference for hierarchical clustering. Journal of the American Statistical Association, (just-accepted), 1-27.
 }

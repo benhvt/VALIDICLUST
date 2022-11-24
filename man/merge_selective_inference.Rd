@@ -9,7 +9,7 @@ merge_selective_inference(X, k1, k2, g, ndraws = 2000, cl_fun, cl)
 \arguments{
 \item{X}{The data matrix of size on which the clustering is applied}
 
-\item{k1}{The fisrt cluster of interest}
+\item{k1}{The first cluster of interest}
 
 \item{k2}{The second cluster of interest}
 

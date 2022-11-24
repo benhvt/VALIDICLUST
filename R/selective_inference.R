@@ -2,7 +2,7 @@
 #'
 #'
 #' @param X The data matrix of size on which the clustering is applied
-#' @param k1 The fisrt cluster of interest
+#' @param k1 The first cluster of interest
 #' @param k2 The second cluster of interest
 #' @param g The variables for which the test is applied
 #' @param ndraws The number of Monte-Carlo samples
@@ -15,9 +15,13 @@
 #' \item \code{stat_g} : the test statistic used for the test.
 #' \item \code{pval} : The resulting p-values of the test.
 #' \item \code{stder} : The standard deviation of the p-values computed thanks to the Monte-Carlo samples.
-#' \item \code{clusters} : The lables of the data.
+#' \item \code{clusters} : The labels of the data.
 #' }
 #' @export
+#'@note This function is adapted from the clusterpval::test_clusters_approx() of Gao et al. (2022)
+#'
+#'@references
+#'Gao, L. L., Bien, J., & Witten, D. (2022). Selective inference for hierarchical clustering. Journal of the American Statistical Association, (just-accepted), 1-27.
 #'
 #' @examples
 #' X <- matrix(rnorm(200),ncol = 2)
@@ -27,9 +31,12 @@
 #'plot(X, col=cl)
 #'test_var1 <- test_selective_inference(X, k1=1, k2=2, g=1, ndraws =2000, cl_fun = hcl_fun, cl = cl)
 #'test_var2 <- test_selective_inference(X, k1=1, k2=2, g=2, ndraws =2000, cl_fun = hcl_fun, cl = cl)
+#'
+
 
 test_selective_inference <- function (X, k1, k2, g, ndraws = 2000, cl_fun, cl = NULL, sig = NULL)
 {
+  # This function is adapted from clusterpval::test_clusters_approx()
   if (!is.matrix(X))
     stop("X should be a matrix")
   n <- nrow(X)

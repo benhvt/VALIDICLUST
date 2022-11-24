@@ -134,16 +134,16 @@ body mass g
 Selective Inference
 </td>
 <td style="text-align: center;">
-0.151
+0.161
 </td>
 <td style="text-align: center;">
-0.774
+0.735
 </td>
 <td style="text-align: center;">
-0.508
+0.487
 </td>
 <td style="text-align: center;">
-0.483
+0.451
 </td>
 </tr>
 <tr>
@@ -151,16 +151,16 @@ Selective Inference
 Merging Selective Inference
 </td>
 <td style="text-align: center;">
-0.147
+0.149
 </td>
 <td style="text-align: center;">
-0.767
+0.765
 </td>
 <td style="text-align: center;">
-0.392
+0.488
 </td>
 <td style="text-align: center;">
-0.473
+0.47
 </td>
 </tr>
 <tr>
@@ -202,8 +202,9 @@ T-test
 
 # References
 
-<a id="1">\[1\]</a> Gao, L. L., Bien, J., & Witten, D. (2020). Selective
-inference for hierarchical clustering. arXiv preprint arXiv:2012.02936.
+<a id="1">\[1\]</a> Gao, L. L., Bien, J., & Witten, D. (2022). Selective
+inference for hierarchical clustering. Journal of the American
+Statistical Association, (just-accepted), 1-27.
 
 <a id="2">\[2\]</a> HARTIGAN, John A. et HARTIGAN, Pamela M. The dip
 test of unimodality. The annals of Statistics, 1985, p. 70-84.
