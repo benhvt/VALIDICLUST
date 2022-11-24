@@ -24,13 +24,15 @@
 #'Gao, L. L., Bien, J., & Witten, D. (2022). Selective inference for hierarchical clustering. Journal of the American Statistical Association, (just-accepted), 1-27.
 #'
 #' @examples
-#' X <- matrix(rnorm(200),ncol = 2)
+#'X <- matrix(rnorm(200),ncol = 2)
 #' hcl_fun <- function(x){
 #' return(as.factor(cutree(hclust(dist(x), method = "ward.D2"), k=2)))}
 #' cl <- hcl_fun(X)
 #'plot(X, col=cl)
 #'test_var1 <- test_selective_inference(X, k1=1, k2=2, g=1, ndraws =2000, cl_fun = hcl_fun, cl = cl)
 #'test_var2 <- test_selective_inference(X, k1=1, k2=2, g=2, ndraws =2000, cl_fun = hcl_fun, cl = cl)
+#'
+#'
 #'
 
 

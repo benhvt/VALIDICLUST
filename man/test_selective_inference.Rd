@@ -55,6 +55,8 @@ plot(X, col=cl)
 test_var1 <- test_selective_inference(X, k1=1, k2=2, g=1, ndraws =2000, cl_fun = hcl_fun, cl = cl)
 test_var2 <- test_selective_inference(X, k1=1, k2=2, g=2, ndraws =2000, cl_fun = hcl_fun, cl = cl)
 
+
+
 }
 \references{
 Gao, L. L., Bien, J., & Witten, D. (2022). Selective inference for hierarchical clustering. Journal of the American Statistical Association, (just-accepted), 1-27.
