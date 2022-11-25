@@ -37,5 +37,6 @@ hcl_fun <- function(x){
 return(as.factor(cutree(hclust(dist(x), method = "ward.D2"), k=4)))}
 cl <- hcl_fun(X)
 plot(X, col=cl)
-test_var1 <- test_selective_inference(X, k1=1, k2=4, g=1, ndraws =2000, cl_fun = hcl_fun, cl = cl)
+#Note that in practice the value of ndraws (the number of Monte-Carlo simulations must be higher)
+test_var1 <- test_selective_inference(X, k1=1, k2=4, g=1, ndraws =100, cl_fun = hcl_fun, cl = cl)
 }

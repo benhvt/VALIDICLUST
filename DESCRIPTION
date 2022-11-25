@@ -7,7 +7,7 @@ Description: Given a partition resulting from any clustering algorithm, the impl
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.2
 Imports: diptest, dplyr
 Depends: R (>= 3.6)
 License: GPL (>= 3)
