@@ -44,7 +44,7 @@ A list with the following elements \itemize{
 Selective inference for post-clustering variable involvement
 }
 \note{
-This function is adapted from the clusterpval::test_clusters_approx() of Gao et al. (2022)
+This function is adapted from the clusterpval::test_clusters_approx() of Gao et al. (2022) (available on Gihtub: https://github.com/lucylgao/clusterpval)
 }
 \examples{
 X <- matrix(rnorm(200),ncol = 2)

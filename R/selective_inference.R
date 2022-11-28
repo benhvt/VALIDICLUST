@@ -18,7 +18,7 @@
 #' \item \code{clusters} : The labels of the data.
 #' }
 #' @export
-#'@note This function is adapted from the clusterpval::test_clusters_approx() of Gao et al. (2022)
+#'@note This function is adapted from the clusterpval::test_clusters_approx() of Gao et al. (2022) (available on Gihtub: https://github.com/lucylgao/clusterpval)
 #'
 #'@references
 #'Gao, L. L., Bien, J., & Witten, D. (2022). Selective inference for hierarchical clustering. Journal of the American Statistical Association, (just-accepted), 1-27.
